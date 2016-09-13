@@ -1,0 +1,10 @@
+I:\developer\HuotuCode\Youbi\HotYoubi\HotCoreUtils\bin\Release\HotCoreUtils.dll
+I:\developer\HuotuCode\Youbi\HotYoubi\HotCoreUtils\bin\Release\HotCoreUtils.pdb
+I:\developer\HuotuCode\Youbi\HotYoubi\HotCoreUtils\obj\Release\HotCoreUtils.dll
+I:\developer\HuotuCode\Youbi\HotYoubi\HotCoreUtils\obj\Release\HotCoreUtils.pdb
+I:\developer\HuotuCode\HotCore\HotCoreUtils\bin\Release\HotCoreUtils.XML
+I:\developer\HuotuCode\HotCore\HotCoreUtils\bin\Release\HotCoreUtils.dll
+I:\developer\HuotuCode\HotCore\HotCoreUtils\bin\Release\HotCoreUtils.pdb
+I:\developer\HuotuCode\HotCore\HotCoreUtils\obj\Release\HotCoreUtils.dll
+I:\developer\HuotuCode\HotCore\HotCoreUtils\obj\Release\HotCoreUtils.pdb
+I:\developer\HuotuCode\HotCore\HotCoreUtils\obj\Release\HotCoreUtils.csprojResolveAssemblyReference.cache

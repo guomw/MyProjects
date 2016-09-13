@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{02AD5BD0-1C59-4681-BB81-059181ADB140}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HotCoreUtils</RootNamespace>
+    <AssemblyName>HotCoreUtils</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <LangVersion>4</LangVersion>
+    <DocumentationFile>bin\Release\HotCoreUtils.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>hot.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caching\CacheEntry.cs" />
+    <Compile Include="Caching\CommonCacheHelper.cs" />
+    <Compile Include="Caching\WebCacheHelper.cs" />
+    <Compile Include="DB\CommandInfo.cs" />
+    <Compile Include="DB\DbHelperSQL.cs" />
+    <Compile Include="DB\DbHelperSQLP.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionInterpreter.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\CompOperation\CompOperator.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\CompOperation\CompOperatorContains.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\CompOperation\CompOperatorEquals.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\CompOperation\CompOperatorGreaterEqualsThan.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\CompOperation\CompOperatorGreaterThan.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\CompOperation\CompOperatorLessEqualsThan.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\CompOperation\CompOperatorLessThan.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\CompOperation\CompOperatorNotEquals.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\CompOperation\ICompOperator.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\Data\BaseDataValue.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\Data\DataArray.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\Data\DataArrayDateTime.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\Data\DataArrayDecimal.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\Data\DataArrayString.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\Data\DataBoolean.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\Data\DataDateTime.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\Data\DataNumber.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\Data\DataString.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\Data\DataValue.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\Data\DataVariable.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\ExpressionNotationDoubleOperator.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\ExpressionNotationSingleOperator.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\ExpressionNotationToken.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\FunctionOperation\FunctionOperator.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\FunctionOperation\FunctionOperatorAverage.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\FunctionOperation\FunctionOperatorCos.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\FunctionOperation\FunctionOperatorSin.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\FunctionOperation\FunctionOperatorSum.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\FunctionOperation\IFunctionOperator.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\IExpressionNotationToken.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\LogicalOperation\ILogicalOperator.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\LogicalOperation\LogicalOperator.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\LogicalOperation\LogicalOperatorAnd.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\LogicalOperation\LogicalOperatorNot.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\LogicalOperation\LogicalOperatorOr.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\MathOperation\IMathOperator.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\MathOperation\MathOperator.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\MathOperation\MathOperatorDivision.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\MathOperation\MathOperatorMinus.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\MathOperation\MathOperatorMultiply.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\MathOperation\MathOperatorPlus.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\MathOperation\MathOperatorUnaryMinus.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\Typographic\LeftParenthesis.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\Typographic\Parenthesis.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionNotation\Typographic\RightParenthesis.cs" />
+    <Compile Include="ExpressionEvaluator\ExpressionTokenParser.cs" />
+    <Compile Include="Helper\ConfigHelper.cs" />
+    <Compile Include="Helper\CookieHelper.cs" />
+    <Compile Include="Helper\EncryptHelper.cs" />
+    <Compile Include="Helper\EvaluatorHelper.cs" />
+    <Compile Include="Helper\GlobalProvider.cs" />
+    <Compile Include="Helper\LogHelper.cs" />
+    <Compile Include="Helper\PageBaseHelper.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Helper\RegexHelper.cs" />
+    <Compile Include="Helper\SerializeHelper.cs" />
+    <Compile Include="Helper\SignatureHelper.cs" />
+    <Compile Include="Helper\StringHelper.cs" />
+    <Compile Include="Helper\JsonHelper.cs" />
+    <Compile Include="Http\HttpForm.cs" />
+    <Compile Include="Http\HttpFormGetRequest.cs" />
+    <Compile Include="Http\HttpFormPostRawRequest.cs" />
+    <Compile Include="Http\HttpFormPostRequest.cs" />
+    <Compile Include="Http\HttpFormResponse.cs" />
+    <Compile Include="Http\IHttpForm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Uploader\FileUploadHelper.cs" />
+    <Compile Include="Uploader\ImageHelper.cs" />
+    <Compile Include="Uploader\UploadConfigHelper.cs" />
+    <Compile Include="Uploader\UploadConfigInfo.cs" />
+    <Compile Include="Uploader\UploadResultInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="hot.ico" />
+    <Content Include="Uploader\UploadConfig_demo.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
