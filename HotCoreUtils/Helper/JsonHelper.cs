@@ -24,7 +24,7 @@ namespace HotCoreUtils.Helper
             JavaScriptSerializer ser = new JavaScriptSerializer();
 
             ser.RegisterConverters(new JavaScriptConverter[] { new DataTableConverter() });
-
+            ser.MaxJsonLength = int.MaxValue;
             string jsonString = ser.Serialize(t);
             //替换Json的Date字符串 
             string p = @"\\/Date\((\d+)\)\\/";
@@ -46,6 +46,7 @@ namespace HotCoreUtils.Helper
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = int.MaxValue;
                 return ser.Deserialize<T>(jsonString);
             }
             catch (Exception)
