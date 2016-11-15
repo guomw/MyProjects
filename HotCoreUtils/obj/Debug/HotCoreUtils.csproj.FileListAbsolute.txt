@@ -11,3 +11,8 @@ G:\gitutils\utils\HotCoreUtils\bin\Debug\HotCoreUtils.dll
 G:\gitutils\utils\HotCoreUtils\bin\Debug\HotCoreUtils.pdb
 G:\gitutils\utils\HotCoreUtils\obj\Debug\HotCoreUtils.dll
 G:\gitutils\utils\HotCoreUtils\obj\Debug\HotCoreUtils.pdb
+J:\HOT\CODE\GitRepository\utils\HotCoreUtils\bin\Debug\HotCoreUtils.dll
+J:\HOT\CODE\GitRepository\utils\HotCoreUtils\bin\Debug\HotCoreUtils.pdb
+J:\HOT\CODE\GitRepository\utils\HotCoreUtils\obj\Debug\HotCoreUtils.csprojResolveAssemblyReference.cache
+J:\HOT\CODE\GitRepository\utils\HotCoreUtils\obj\Debug\HotCoreUtils.dll
+J:\HOT\CODE\GitRepository\utils\HotCoreUtils\obj\Debug\HotCoreUtils.pdb

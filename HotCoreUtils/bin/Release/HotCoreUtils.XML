@@ -1971,6 +1971,13 @@
             <param name="dt"></param>
             <returns></returns>
         </member>
+        <member name="M:HotCoreUtils.Helper.StringHelper.GetConvertFriendlyTime(System.String)">
+            <summary>
+            将时间格式转换成友好的提示
+            </summary>
+            <param name="dt">The dt.</param>
+            <returns>System.String.</returns>
+        </member>
         <member name="M:HotCoreUtils.Helper.StringHelper.GetEnumDescription``1(System.Int32)">
             <summary>
             获取枚举的注释

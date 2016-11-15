@@ -647,6 +647,49 @@ namespace HotCoreUtils.Helper
                 return "";
             }
         }
+        /// <summary>
+        /// 将时间格式转换成友好的提示
+        /// </summary>
+        /// <param name="dt">The dt.</param>
+        /// <returns>System.String.</returns>
+        public static string GetConvertFriendlyTime(string dt)
+        {
+            try
+            {
+                TimeSpan span = DateTime.Now - Convert.ToDateTime(dt);
+                if (span.TotalDays > 30)
+                {
+                    return string.Format("{0}个月前", (int)span.TotalDays / 30);
+                }
+                if (span.TotalDays > 1)
+                {
+                    return string.Format("{0}天前", (int)Math.Floor(span.TotalDays));
+                }
+                else if (span.TotalHours > 1)
+                {
+                    return string.Format("{0}小时", (int)Math.Floor(span.TotalHours));
+                }
+                else if (span.TotalMinutes > 1)
+                {
+                    return string.Format("{0}分钟前", (int)Math.Floor(span.TotalMinutes));
+                }
+                else if (span.TotalSeconds >= 1)
+                {
+                    return string.Format("{0}秒前", (int)Math.Floor(span.TotalSeconds));
+                }
+                else
+                {
+                    return "刚刚";
+                }
+            }
+            catch
+            {
+                return "";
+            }
+        }
+
+
+
 
         /// <summary>
         /// 获取枚举的注释
