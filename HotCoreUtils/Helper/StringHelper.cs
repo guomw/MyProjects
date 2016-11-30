@@ -667,7 +667,7 @@ namespace HotCoreUtils.Helper
                 }
                 else if (span.TotalHours > 1)
                 {
-                    return string.Format("{0}小时", (int)Math.Floor(span.TotalHours));
+                    return string.Format("{0}小时前", (int)Math.Floor(span.TotalHours));
                 }
                 else if (span.TotalMinutes > 1)
                 {
