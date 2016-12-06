@@ -741,6 +741,16 @@
             <param name="orderby">排序类型，true:默认排序，false:desc排序</param>
             <returns>分页语句</returns>
         </member>
+        <member name="M:HotCoreUtils.DB.DbHelperSQLP.buildPageOrderBySql(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            外部传排序，生成完整分页语句--无总数返回
+            </summary>
+            <param name="pageIndex">当前页码</param>
+            <param name="pageSize">每页数量</param>
+            <param name="querySql">原语句</param>
+            <param name="orderbyField">排序字段</param>        
+            <returns>分页语句</returns>
+        </member>
         <member name="M:HotCoreUtils.DB.DbHelperSQLP.buildRecordCountSql(System.String)">
             <summary>
             生成获取总数语句

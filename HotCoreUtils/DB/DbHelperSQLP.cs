@@ -669,9 +669,20 @@ namespace HotCoreUtils.DB
         /// <returns>分页语句</returns>
         public static string buildPageSql(int pageIndex, int pageSize, string querySql, string orderbyField, bool orderby = false)
         {
+
+            var fields = orderbyField.Split(',');
+            string _orderbyfield = "";
+            foreach (var item in fields)
+            {
+                if (string.IsNullOrEmpty(_orderbyfield))
+                    _orderbyfield = string.Format("{0} {1}", item, orderby ? "asc" : "desc");
+                else
+                    _orderbyfield += string.Format(",{0} {1}", item, orderby ? "asc" : "desc");
+            }
+
             //添加行号
             int startIndex = querySql.IndexOf("select", StringComparison.CurrentCultureIgnoreCase);
-            querySql = querySql.Insert(startIndex + 6, string.Format(" ROW_NUMBER() OVER ( ORDER BY ({0}) {1} ) AS rowIndex, ", orderbyField, orderby ? "asc" : "desc"));
+            querySql = querySql.Insert(startIndex + 6, string.Format(" ROW_NUMBER() OVER ( ORDER BY {0} ) AS rowIndex, ", _orderbyfield));
             //页码不能小于或等于0
             if (pageIndex <= 0) pageIndex = 1;
             int beginNum = (pageIndex - 1) * pageSize;
@@ -686,6 +697,47 @@ namespace HotCoreUtils.DB
                                         beginNum, endNum, querySql);
             return sql;
         }
+
+        /// <summary>
+        /// 外部传排序，生成完整分页语句--无总数返回
+        /// </summary>
+        /// <param name="pageIndex">当前页码</param>
+        /// <param name="pageSize">每页数量</param>
+        /// <param name="querySql">原语句</param>
+        /// <param name="orderbyField">排序字段</param>        
+        /// <returns>分页语句</returns>
+        public static string buildPageOrderBySql(int pageIndex, int pageSize, string querySql, string orderbyField)
+        {
+
+            var fields = orderbyField.Split(',');
+            string _orderbyfield = "";
+            foreach (var item in fields)
+            {
+                if (string.IsNullOrEmpty(_orderbyfield))
+                    _orderbyfield = string.Format("{0}", item);
+                else
+                    _orderbyfield += string.Format(",{0} ", item);
+            }
+
+            //添加行号
+            int startIndex = querySql.IndexOf("select", StringComparison.CurrentCultureIgnoreCase);
+            querySql = querySql.Insert(startIndex + 6, string.Format(" ROW_NUMBER() OVER ( ORDER BY {0} ) AS rowIndex, ", _orderbyfield));
+            //页码不能小于或等于0
+            if (pageIndex <= 0) pageIndex = 1;
+            int beginNum = (pageIndex - 1) * pageSize;
+            int endNum = pageIndex * pageSize;
+            string sql = string.Format(@"   WITH    _table
+                                                  AS ( {2}
+                                                     )
+                                            SELECT *
+                                            FROM    _table
+                                            WHERE   rowIndex > {0}
+                                                    AND rowIndex <= {1}",
+                                        beginNum, endNum, querySql);
+            return sql;
+        }
+
+
         /// <summary>
         /// 生成获取总数语句
         /// </summary>
