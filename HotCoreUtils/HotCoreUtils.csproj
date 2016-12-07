@@ -111,6 +111,7 @@
     <Compile Include="ExpressionEvaluator\ExpressionNotation\Typographic\Parenthesis.cs" />
     <Compile Include="ExpressionEvaluator\ExpressionNotation\Typographic\RightParenthesis.cs" />
     <Compile Include="ExpressionEvaluator\ExpressionTokenParser.cs" />
+    <Compile Include="Helper\CommentHelper.cs" />
     <Compile Include="Helper\ConfigHelper.cs" />
     <Compile Include="Helper\CookieHelper.cs" />
     <Compile Include="Helper\EncryptHelper.cs" />
