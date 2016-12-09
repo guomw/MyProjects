@@ -159,7 +159,7 @@ namespace HotCoreUtils.Helper
             return strTemp;
         }
 
-        
+
         #endregion
 
         #region 获得客户的IP
@@ -688,6 +688,48 @@ namespace HotCoreUtils.Helper
             }
         }
 
+        /// <summary>
+        /// 将时间格式转换成友好的提示
+        /// </summary>
+        /// <param name="dt">The dt.</param>
+        /// <param name="day">天数,超过指定天数，显示具体时间(年月日)</param>
+        /// <returns>System.String.</returns>
+        public static string GetConvertFriendlyTime(string dt, int day)
+        {
+            try
+            {
+                TimeSpan span = DateTime.Now - Convert.ToDateTime(dt);
+                if (span.TotalDays > day)
+                {
+                    return string.Format("{0}", Convert.ToDateTime(dt).ToString("yyyy-MM-dd"));
+                }
+                if (span.TotalDays > 1)
+                {
+                    return string.Format("{0}天前", (int)Math.Floor(span.TotalDays));
+                }
+                else if (span.TotalHours > 1)
+                {
+                    return string.Format("{0}小时前", (int)Math.Floor(span.TotalHours));
+                }
+                else if (span.TotalMinutes > 1)
+                {
+                    return string.Format("{0}分钟前", (int)Math.Floor(span.TotalMinutes));
+                }
+                else if (span.TotalSeconds >= 1)
+                {
+                    return string.Format("{0}秒前", (int)Math.Floor(span.TotalSeconds));
+                }
+                else
+                {
+                    return "刚刚";
+                }
+            }
+            catch
+            {
+                return "";
+            }
+        }
+
 
 
 
@@ -718,7 +760,7 @@ namespace HotCoreUtils.Helper
 
 
         #region 基础函数
-        
+
         /// <summary>
         /// 取字符左函数
         /// </summary>
@@ -802,7 +844,7 @@ namespace HotCoreUtils.Helper
         #endregion
 
         #region 操作 int  数据
-      
+
         /// <summary>
         /// 对象是否为 int  类型数据
         /// </summary>
@@ -916,7 +958,7 @@ namespace HotCoreUtils.Helper
         /// <param name="isTrue">返回是否转换成功</param>
         /// <returns>float值</returns>
         private static float IsFloat(object Object, out bool isTrue)
-        {            
+        {
             try { isTrue = true; return float.Parse(Object.ToString()); }
             catch { isTrue = false; return 0; }
         }
@@ -958,12 +1000,12 @@ namespace HotCoreUtils.Helper
             return Float;
         }
 
-       
+
         #endregion
 
         #region 操作 decimal  数据
 
-        
+
         /// <summary>
         /// 对象是否为 decimal  类型数据
         /// </summary>

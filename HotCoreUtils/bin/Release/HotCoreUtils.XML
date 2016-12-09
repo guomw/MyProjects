@@ -779,6 +779,180 @@
             
             </summary>
         </member>
+        <member name="T:HotCoreUtils.Helper.CommentHelper">
+            <summary>
+            TODO:文章评论助手,使用此帮助类，必须存在hot_comment_list数据表
+            </summary>
+        </member>
+        <member name="P:HotCoreUtils.Helper.CommentHelper.connectionString">
+            <summary>
+            数据库连接字符串
+            </summary>
+            <value>The connection string.</value>
+        </member>
+        <member name="M:HotCoreUtils.Helper.CommentHelper.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:HotCoreUtils.Helper.CommentHelper.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="conStr">数据库连接字符串</param>
+        </member>
+        <member name="M:HotCoreUtils.Helper.CommentHelper.AddComment(HotCoreUtils.Helper.CommentModel)">
+            <summary>
+            添加评论
+            </summary>
+            <param name="model">The model.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:HotCoreUtils.Helper.CommentHelper.AddReplyComment(HotCoreUtils.Helper.ReplyCommentModel)">
+            <summary>
+            回复评论
+            </summary>
+            <param name="model">The model.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:HotCoreUtils.Helper.CommentHelper.AddLikeComment(System.Int32,System.Int32)">
+            <summary>
+            添加点赞
+            </summary>
+            <param name="commentId">点赞的评论ID</param>
+            <param name="userId">点赞用户ID</param>
+            <returns>true or false</returns>
+        </member>
+        <member name="T:HotCoreUtils.Helper.CommentModel">
+            <summary>
+            评论对象实体
+            </summary>
+        </member>
+        <member name="P:HotCoreUtils.Helper.CommentModel.comment_id">
+            <summary>
+            评论ID
+            </summary>
+            <value>The comment_id.</value>
+        </member>
+        <member name="P:HotCoreUtils.Helper.CommentModel.article_id">
+            <summary>
+            文章ID
+            </summary>
+            <value>The article_id.</value>
+        </member>
+        <member name="P:HotCoreUtils.Helper.CommentModel.comment_user_id">
+            <summary>
+            评论用户ID
+            </summary>
+            <value>The comment_user_id.</value>
+        </member>
+        <member name="P:HotCoreUtils.Helper.CommentModel.comment_user_name">
+            <summary>
+            评论用户名称
+            </summary>
+            <value>The comment_user_name.</value>
+        </member>
+        <member name="P:HotCoreUtils.Helper.CommentModel.reply_comment_id">
+            <summary>
+            回复的评论ID
+            </summary>
+            <value>The reply_comment_id.</value>
+        </member>
+        <member name="P:HotCoreUtils.Helper.CommentModel.reply_user_id">
+            <summary>
+            回复评论用户的ID
+            </summary>
+            <value>The reply_user_id.</value>
+        </member>
+        <member name="P:HotCoreUtils.Helper.CommentModel.reply_user_name">
+            <summary>
+            回复评论用户的名称
+            </summary>
+            <value>The reply_user_name.</value>
+        </member>
+        <member name="P:HotCoreUtils.Helper.CommentModel.reply_time">
+            <summary>
+            回复时间
+            </summary>
+            <value>The reply_time.</value>
+        </member>
+        <member name="P:HotCoreUtils.Helper.CommentModel.commnet_content">
+            <summary>
+            评论或回复内容
+            </summary>
+            <value>The commnet_content.</value>
+        </member>
+        <member name="P:HotCoreUtils.Helper.CommentModel.reply_count">
+            <summary>
+            当前评论的回复数
+            </summary>
+            <value>The reply_count.</value>
+        </member>
+        <member name="P:HotCoreUtils.Helper.CommentModel.like_count">
+            <summary>
+            当前评论的点赞数
+            </summary>
+            <value>The like_count.</value>
+        </member>
+        <member name="P:HotCoreUtils.Helper.CommentModel.hot_comment">
+            <summary>
+            是否是热点评论
+            </summary>
+            <value>The hot_comment.</value>
+        </member>
+        <member name="P:HotCoreUtils.Helper.CommentModel.create_time">
+            <summary>
+            创建时间
+            </summary>
+            <value>The create_time.</value>
+        </member>
+        <member name="P:HotCoreUtils.Helper.CommentModel.friendly_prompt_time">
+            <summary>
+            友好的提示时间
+            </summary>
+            <value>The friendly_prompt_time.</value>
+        </member>
+        <member name="T:HotCoreUtils.Helper.ReplyCommentModel">
+            <summary>
+            回复评论实体对象
+            </summary>
+        </member>
+        <member name="P:HotCoreUtils.Helper.ReplyCommentModel.comment_user_id">
+            <summary>
+            评论用户ID
+            </summary>
+            <value>The comment_user_id.</value>
+        </member>
+        <member name="P:HotCoreUtils.Helper.ReplyCommentModel.comment_user_name">
+            <summary>
+            评论用户名称
+            </summary>
+            <value>The comment_user_name.</value>
+        </member>
+        <member name="P:HotCoreUtils.Helper.ReplyCommentModel.reply_comment_id">
+            <summary>
+            回复的评论ID
+            </summary>
+            <value>The reply_comment_id.</value>
+        </member>
+        <member name="P:HotCoreUtils.Helper.ReplyCommentModel.reply_user_id">
+            <summary>
+            回复评论用户的ID
+            </summary>
+            <value>The reply_user_id.</value>
+        </member>
+        <member name="P:HotCoreUtils.Helper.ReplyCommentModel.reply_user_name">
+            <summary>
+            回复评论用户的名称
+            </summary>
+            <value>The reply_user_name.</value>
+        </member>
+        <member name="P:HotCoreUtils.Helper.ReplyCommentModel.reply_commnet_content">
+            <summary>
+            回复内容
+            </summary>
+            <value>The commnet_content.</value>
+        </member>
         <member name="T:HotCoreUtils.Helper.ConfigHelper">
             <summary>
             读取配置帮助类
@@ -1986,6 +2160,14 @@
             将时间格式转换成友好的提示
             </summary>
             <param name="dt">The dt.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:HotCoreUtils.Helper.StringHelper.GetConvertFriendlyTime(System.String,System.Int32)">
+            <summary>
+            将时间格式转换成友好的提示
+            </summary>
+            <param name="dt">The dt.</param>
+            <param name="day">天数,超过指定天数，显示具体时间(年月日)</param>
             <returns>System.String.</returns>
         </member>
         <member name="M:HotCoreUtils.Helper.StringHelper.GetEnumDescription``1(System.Int32)">
