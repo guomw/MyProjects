@@ -178,14 +178,13 @@
             <param name="obj"></param>
             <param name="dep"></param>
         </member>
-        <member name="M:HotCoreUtils.Caching.WebCacheHelper.Insert(System.String,System.Object,System.String,HotCoreUtils.Caching.WebCacheTimeOption)">
+        <member name="M:HotCoreUtils.Caching.WebCacheHelper.Insert(System.String,System.Object,System.String)">
             <summary>
             插入缓存 仅使用文件依赖
             </summary>
             <param name="key">缓存key</param>
             <param name="obj">缓存对象</param>
             <param name="depFileName">依赖文件名称或key</param>
-            <param name="timeType">WebCacheTimeOption缓存时间</param>
         </member>
         <member name="M:HotCoreUtils.Caching.WebCacheHelper.Insert(System.String,System.Object,System.TimeSpan,System.Web.Caching.CacheDependency)">
             <summary>
@@ -260,53 +259,25 @@
             </summary>
             <param name="handler"></param>
         </member>
-        <member name="M:HotCoreUtils.Caching.WebCacheHelper.GetDepFile(System.String,HotCoreUtils.Caching.WebCacheTimeOption)">
+        <member name="M:HotCoreUtils.Caching.WebCacheHelper.GetDepFile(System.String)">
             <summary>
             得到缓存依赖KEY
             </summary>
             <param name="token">唯一值</param>
-            <param name="timeType">WebCacheTimeOption 缓存时间类型</param>
             <returns></returns>
         </member>
-        <member name="M:HotCoreUtils.Caching.WebCacheHelper.RefreshCache(System.String,HotCoreUtils.Caching.WebCacheTimeOption)">
+        <member name="M:HotCoreUtils.Caching.WebCacheHelper.RefreshCache(System.String)">
             <summary>
             刷新缓存文件
             </summary>
             <param name="token"></param>
-            <param name="timeType">缓存时间类型0=每小时，1=每天，2=每月,3=永久,默认1</param>
         </member>
-        <member name="M:HotCoreUtils.Caching.WebCacheHelper.DeleteDepFile(System.String,HotCoreUtils.Caching.WebCacheTimeOption)">
+        <member name="M:HotCoreUtils.Caching.WebCacheHelper.DeleteDepFile(System.String)">
             <summary>
             删除缓存文件
             </summary>
             <param name="token"></param>
-            <param name="timeType">缓存时间类型0=每小时，1=每天，2=每月,3=永久,默认1</param>
             <returns></returns>
-        </member>
-        <member name="T:HotCoreUtils.Caching.WebCacheTimeOption">
-            <summary>
-            缓存时间
-            </summary>
-        </member>
-        <member name="F:HotCoreUtils.Caching.WebCacheTimeOption.每小时">
-            <summary>
-            每小时
-            </summary>
-        </member>
-        <member name="F:HotCoreUtils.Caching.WebCacheTimeOption.每天">
-            <summary>
-            每天
-            </summary>
-        </member>
-        <member name="F:HotCoreUtils.Caching.WebCacheTimeOption.每月">
-            <summary>
-            每月
-            </summary>
-        </member>
-        <member name="F:HotCoreUtils.Caching.WebCacheTimeOption.永久">
-            <summary>
-            永久
-            </summary>
         </member>
         <member name="T:HotCoreUtils.Caching.WebCacheHelper`1">
             <summary>

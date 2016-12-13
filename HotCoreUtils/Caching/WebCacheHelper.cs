@@ -123,10 +123,9 @@ namespace HotCoreUtils.Caching
         /// <param name="key">缓存key</param>
         /// <param name="obj">缓存对象</param>
         /// <param name="depFileName">依赖文件名称或key</param>
-        /// <param name="timeType">WebCacheTimeOption缓存时间</param>
-        public static void Insert(string key, object obj, string depFileName,WebCacheTimeOption timeType=WebCacheTimeOption.永久)
+        public static void Insert(string key, object obj, string depFileName)
         {
-            Insert(key, obj, new TimeSpan(100, 0, 0, 0), new CacheDependency(GetDepFile(depFileName, timeType)));
+            Insert(key, obj, new TimeSpan(100, 0, 0, 0), new CacheDependency(GetDepFile(depFileName)));
         }
 
 
@@ -316,11 +315,10 @@ namespace HotCoreUtils.Caching
         /// 得到缓存依赖KEY
         /// </summary>
         /// <param name="token">唯一值</param>
-        /// <param name="timeType">WebCacheTimeOption 缓存时间类型</param>
         /// <returns></returns>
-        public static string GetDepFile(string token, WebCacheTimeOption timeType = WebCacheTimeOption.永久)
+        public static string GetDepFile(string token)
         {
-            string depFile = GetDepFilePath(token, timeType);
+            string depFile = GetDepFilePath(token);
             if (!System.IO.File.Exists(depFile))
             {
                 System.IO.File.Create(depFile).Dispose();
@@ -331,10 +329,9 @@ namespace HotCoreUtils.Caching
         /// 刷新缓存文件
         /// </summary>
         /// <param name="token"></param>
-        /// <param name="timeType">缓存时间类型0=每小时，1=每天，2=每月,3=永久,默认1</param>
-        public static void RefreshCache(string token, WebCacheTimeOption timeType = WebCacheTimeOption.永久)
+        public static void RefreshCache(string token)
         {
-            string depFile = GetDepFilePath(token, timeType);
+            string depFile = GetDepFilePath(token);
             if (System.IO.File.Exists(depFile))
                 File.WriteAllText(depFile, DateTime.Now.ToString());
         }
@@ -342,13 +339,12 @@ namespace HotCoreUtils.Caching
         /// 删除缓存文件
         /// </summary>
         /// <param name="token"></param>
-        /// <param name="timeType">缓存时间类型0=每小时，1=每天，2=每月,3=永久,默认1</param>
         /// <returns></returns>
-        public static bool DeleteDepFile(string token, WebCacheTimeOption timeType= WebCacheTimeOption.永久)
+        public static bool DeleteDepFile(string token)
         {
             try
             {
-                string depFile = GetDepFilePath(token, timeType);
+                string depFile = GetDepFilePath(token);
                 if (System.IO.File.Exists(depFile))
                 {
                     System.IO.File.Delete(depFile);
@@ -361,28 +357,9 @@ namespace HotCoreUtils.Caching
             }
         }
 
-        private static string GetDepFilePath(string token, WebCacheTimeOption timeType)
+        private static string GetDepFilePath(string token)
         {
-            string depKey = "";
-            switch (timeType)
-            {
-                case WebCacheTimeOption.每小时:
-                    depKey = token + DateTime.Now.ToString("yyyyMMddHH");
-                    break;
-                case WebCacheTimeOption.每天:
-                    depKey = token + DateTime.Now.ToString("yyyyMMdd");
-                    break;
-                case WebCacheTimeOption.每月:
-                    depKey = token + DateTime.Now.ToString("yyyyMM");
-                    break;
-                case WebCacheTimeOption.永久:
-                    depKey = token;
-                    break;
-                default:
-                    depKey = token + DateTime.Now.ToString("yyyyMMdd");
-                    break;
-            }
-            string depFile = HttpContext.Current.Server.MapPath(string.Format(CACHEDEPFILE, depKey));
+            string depFile = HttpContext.Current.Server.MapPath(string.Format(CACHEDEPFILE, token));
             if (!System.IO.Directory.Exists(System.IO.Path.GetDirectoryName(depFile)))
             {
                 System.IO.Directory.CreateDirectory(System.IO.Path.GetDirectoryName(depFile));
@@ -390,31 +367,6 @@ namespace HotCoreUtils.Caching
             return depFile;
         }
     }
-
-
-    /// <summary>
-    /// 缓存时间
-    /// </summary>
-    public enum WebCacheTimeOption
-    {        
-        /// <summary>
-        /// 每小时
-        /// </summary>
-        每小时 = 0,
-        /// <summary>
-        /// 每天
-        /// </summary>
-        每天 = 1,
-        /// <summary>
-        /// 每月
-        /// </summary>
-        每月 = 2,
-        /// <summary>
-        /// 永久
-        /// </summary>
-        永久 = 3
-    }
-
 
 
     /// <summary>

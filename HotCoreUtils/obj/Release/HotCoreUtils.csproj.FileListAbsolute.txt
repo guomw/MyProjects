@@ -13,4 +13,3 @@ J:\HOT\CODE\GitRepository\utils\HotCoreUtils\bin\Release\HotCoreUtils.dll
 J:\HOT\CODE\GitRepository\utils\HotCoreUtils\bin\Release\HotCoreUtils.pdb
 J:\HOT\CODE\GitRepository\utils\HotCoreUtils\obj\Release\HotCoreUtils.dll
 J:\HOT\CODE\GitRepository\utils\HotCoreUtils\obj\Release\HotCoreUtils.pdb
-J:\HOT\CODE\GitRepository\utils\HotCoreUtils\obj\Release\HotCoreUtils.csprojResolveAssemblyReference.cache
