@@ -1,0 +1,5 @@
+/Users/guomw/Projects/utils/HotCoreUtils/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/Users/guomw/Projects/utils/HotCoreUtils/bin/Debug/HotCoreUtils.dll.mdb
+/Users/guomw/Projects/utils/HotCoreUtils/bin/Debug/HotCoreUtils.dll
+/Users/guomw/Projects/utils/HotCoreUtils/obj/Debug/HotCoreUtils.dll
+/Users/guomw/Projects/utils/HotCoreUtils/obj/Debug/HotCoreUtils.dll.mdb

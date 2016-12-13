@@ -800,7 +800,7 @@ namespace HotCoreUtils.Uploader
                 CreateDirectory(sPathAndFileName);
                 File.WriteAllBytes(sPathAndFileName, bufferData);
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 return false;
             }
@@ -899,7 +899,6 @@ namespace HotCoreUtils.Uploader
             {
                 byte[] arr = Convert.FromBase64String(imageData);
                 MemoryStream ms = new MemoryStream(arr);
-                Bitmap bmp = new Bitmap(ms);
                 try
                 {
                     Image image = Image.FromStream(ms);///实例化,得到img

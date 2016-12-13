@@ -113,8 +113,7 @@ namespace HotCoreUtils.ExpressionEvaluator
         }
 
         private string generateTransitionExpression(string expression)
-        {
-            string _RXTokenSep = @"[" + TOKEN_SEP + "]";
+        {            
 
             string _sBuffer = expression;
 
