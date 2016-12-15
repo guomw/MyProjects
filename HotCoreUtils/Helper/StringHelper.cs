@@ -1250,11 +1250,11 @@ namespace HotCoreUtils.Helper
     }
 }
 
-//newtonsoft报错，添加
-namespace System.Runtime.CompilerServices
-{
-    /// <summary>
-    /// 
-    /// </summary>
-    public class ExtensionAttribute : Attribute { }
-}
+////newtonsoft报错，添加
+//namespace System.Runtime.CompilerServices
+//{
+//    /// <summary>
+//    /// 
+//    /// </summary>
+//    public class ExtensionAttribute : Attribute { }
+//}
