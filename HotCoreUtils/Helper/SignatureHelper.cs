@@ -146,7 +146,6 @@ namespace HotCoreUtils.Helper
         public static string BuildSign(NameValueCollection coll, string secrect, BuildSettingModel setting)
         {
             SortedDictionary<string, string> inputPara = new SortedDictionary<string, string>();
-            IEnumerator myEnumerator = coll.GetEnumerator();
             foreach (string s in coll.AllKeys)
             {
                 if (!inputPara.ContainsKey(s))
@@ -178,7 +177,6 @@ namespace HotCoreUtils.Helper
         public static string BuildSign(NameValueCollection coll, string secrect)
         {
             SortedDictionary<string, string> inputPara = new SortedDictionary<string, string>();
-            IEnumerator myEnumerator = coll.GetEnumerator();
             foreach (string s in coll.AllKeys)
             {
                 if (!inputPara.ContainsKey(s))

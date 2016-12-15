@@ -295,8 +295,6 @@ namespace HotCoreUtils.Helper
             @"-->",
             @"<!--.*\n"
             };
-
-            string newReg = aryReg[0];
             string strOutput = strHtml;
             for (int i = 0; i < aryReg.Length; i++)
             {

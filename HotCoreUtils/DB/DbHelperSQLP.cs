@@ -397,9 +397,8 @@ namespace HotCoreUtils.DB
                     tx.Commit();
                     return count;
                 }
-                catch (Exception e)
-                {
-                    string error = e.ToString();
+                catch (Exception)
+                {                   
                     tx.Rollback();
                     return 0;
                 }

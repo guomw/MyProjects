@@ -59,8 +59,7 @@ namespace HotCoreUtils.Helper
         /// <param name="content"></param>
         private static void WriteLog(string tag, object content)
         {
-            DateTime date = DateTime.Now;
-            string sLogDate = date.ToString("yyyy-MM-dd HH:mm:ss");
+            DateTime date = DateTime.Now;            
             string logPath = "Log";
             string logPathFull = null;
             if (HttpContext.Current != null)
