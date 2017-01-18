@@ -1224,7 +1224,7 @@ namespace HotCoreUtils.Helper
 
 
         /// <summary>
-        /// 将对象属性转换为key-value对 jwei
+        /// 将对象属性转换为key-value对
         /// </summary>
         /// <param name="o"></param>
         /// <returns></returns>
