@@ -402,9 +402,10 @@ namespace HotCoreUtils.Helper
         /// <summary>
         /// 生成指定位随机数，根据类型生成不同的随机数
         /// </summary>
-        /// <param name="n"></param>
+        /// <param name="n">The n.</param>
         /// <param name="createtype">类型 0:字母加数字 1数字 2字母</param>
-        /// <returns></returns>
+        /// <param name="random">The random.</param>
+        /// <returns>System.String.</returns>
         public static string CreateCheckCode(int n, int createtype, Random random)
         {
             string sCode = "";

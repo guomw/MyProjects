@@ -177,21 +177,22 @@ namespace HotCoreUtils.Helper
         {
             try
             {
-                string _currentVersion = string.Empty;
-                string _newVersion = string.Empty;
-                //当前版本号
-                var cv = currentVersion.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
-                if (cv.Length > 2 && cv.Length < 4)
-                    _currentVersion = currentVersion.Remove(currentVersion.LastIndexOf("."), 1);
-
-                //新版本号
-                var nv = version.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
-                if (nv.Length > 2 && nv.Length < 4)
-                    _newVersion = version.Remove(version.LastIndexOf("."), 1);
-                if (Convert.ToDouble(_newVersion) <= Convert.ToDouble(_currentVersion))
-                    return false;
+                string _newVersion, _currentVersion;
+                //处理当前版本号
+                int firstIdx = currentVersion.IndexOf('.');
+                if (firstIdx >= 0)
+                    _currentVersion = currentVersion.Replace(".", "").Insert(firstIdx, ".");
                 else
-                    return true;
+                    _currentVersion = currentVersion;
+
+                //处理新版本号
+                int _firstIdx = version.IndexOf('.');
+                if (_firstIdx >= 0)
+                    _newVersion = version.Replace(".", "").Insert(_firstIdx, ".");
+                else
+                    _newVersion = version;
+
+                return Convert.ToDecimal(_newVersion) > Convert.ToDecimal(_currentVersion);
             }
             catch (Exception)
             {
